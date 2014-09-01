@@ -1,0 +1,18 @@
+ 
+  <% line_item.gift_wraps.each do |g| %>
+ 
+  <tr class="line-item">
+    <td></td>
+    <td>
+      <span class="no-link"><b>Gift Wrap:</b></span> "<%= truncate(g.gift_text,:length => 70) %>"
+    </td>
+<td class="cart-item-price" data-hook="cart_item_price">
+    <%= number_to_currency g.price %></td> 
+    <td class="cart-item-quantity" data-hook="cart_item_quantity">
+<input class="line_item_quantity"   min="1"  size="5" type="number" value="1" readonly>
+    </td>
+    <td class="cart-item-price" data-hook="cart_item_price"><%= number_to_currency g.price %></td>
+    <td><%= link_to image_tag('icons/delete.png'), gift_wrap_path(g), :method => :delete   %></td>
+  </tr>
+  
+  <% end %>

@@ -1,0 +1,23 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= Spree.t(:gift_wrap_options) %>
+<% end %>
+<%= form_tag admin_gift_wrap_path(@giftwrap), {:method => :put} do  %>
+ <div id="preferences" data-hook>
+ <fieldset class="general no-border-top">
+ 		<legend align="center">Set Gift Wrap Pricing</legend>
+
+ 
+
+
+ 	  <div class="field">
+ 	  	<%= label_tag :gift_wrap_price %>
+ 	  	<%= text_field_tag :gift_wrap_price,@giftwrap.value,:size => 4  %>
+ 	  </div>
+ 		<div class="form-buttons filter-actions actions" data-hook="buttons">
+        	<button class="icon-refresh button" name="button" type="submit">Save</button>
+      </div>
+ </fieldset>
+ </div>
+ <% end %>

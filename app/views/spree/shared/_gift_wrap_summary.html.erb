@@ -1,0 +1,8 @@
+<% item.gift_wraps.each do |g| %>
+<tr class="stock-item">
+                  <td class="item-image"></td>
+                  <td class="item-name"><b>Gift Wrap:</b></span> "<%= truncate(g.gift_text,:length => 70) %>"</td>
+                  <td class="item-qty">1</td>
+                  <td class="item-price"><%= number_to_currency g.price %></td>
+                </tr>
+ <% end %>

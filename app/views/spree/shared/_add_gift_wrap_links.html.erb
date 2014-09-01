@@ -1,0 +1,14 @@
+   <% if line_item.quantity > line_item.gift_wraps.count %>
+ 	<br><br>
+ 	<div class="gift-wrap cart-form<%= line_item.id %>">
+        <a href="#" id="gift_wrap_add" data-id="<%= line_item.id %>">Add Gift Wrap $<%= Spree::GiftWrap.price.value %></a>
+     <br>
+     <div class="gift-wrap-textarea">
+    
+     	<%= text_field_tag :gift_text, "",:cols => "50",   :maxlength =>"200", :placeholder => "Enter gift wrap note" %>
+     	<input type="button" value="Add" class="add-gift-note" data-url="<%= gift_wraps_path %>" data-line-item-id="<%= line_item.id %>">
+
+     
+     </div>
+     </div>
+  <% end %>	
